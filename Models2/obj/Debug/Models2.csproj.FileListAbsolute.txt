@@ -1,0 +1,11 @@
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\Models2.dll.config
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\Models2.dll
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\Models2.pdb
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\EntityFramework.dll
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\EntityFramework.xml
+C:\Users\kline\Documents\DataScienceProgram\Models2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kline\Documents\DataScienceProgram\Models2\obj\Debug\Models2.csproj.CopyComplete
+C:\Users\kline\Documents\DataScienceProgram\Models2\obj\Debug\Models2.dll
+C:\Users\kline\Documents\DataScienceProgram\Models2\obj\Debug\Models2.pdb
+C:\Users\kline\Documents\DataScienceProgram\Models2\obj\Debug\Models2.csprojAssemblyReference.cache
