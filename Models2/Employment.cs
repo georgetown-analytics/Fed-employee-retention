@@ -28,7 +28,7 @@ namespace Models2
         public int YearID { get; set; }
 
         [ForeignKey("Survey")]
-        public int SurveyID { get; set; }
+        public int? SurveyID { get; set; }
 
         [Required]
         public DateTime Added { get; set; }

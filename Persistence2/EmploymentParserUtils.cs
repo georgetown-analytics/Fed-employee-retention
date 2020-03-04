@@ -37,64 +37,21 @@ namespace Persistence2
                         while (!parser.EndOfData)
                         {
                             //Process row
-                            int[] indices = new int[] { 0, 1, 2, 3, 4, 5 };
+                            int[] indices = new int[] { 0, 1 };
                             IEnumerable<String> columns = parser.ReadFields().Select((field, index) => new { field, index }).Where(fi => indices.Contains(fi.index)).Select(fi => fi.field);
 
                             String agencyName = columns.ElementAtOrDefault(0).Trim().Remove(0, 5);
                             String agencyCode = columns.ElementAtOrDefault(0).Trim().Substring(0, 4);
-                            int DomesticUSCount = 0;
-                            int USTerritoriesCount = 0;
-                            int ForeignCount = 0;
-                            int UnspecifiedCount = 0;
-                            int locationAll = 0;
+                            String employees = columns.ElementAtOrDefault(1).Trim();
+                            int employeeCount = 0;
 
-                            if (columns.ElementAtOrDefault(1).Trim().Equals("NA"))
+                            if (!employees.Equals("NA") && !employees.Equals("Employment") && !employees.Equals("Total"))
                             {
-                                DomesticUSCount = 0;
-                            }
-                            else
-                            {
-                                DomesticUSCount = Convert.ToInt32(columns.ElementAtOrDefault(1).Trim());
-                            }
-
-                            if (columns.ElementAtOrDefault(2).Trim().Equals("NA"))
-                            {
-                                USTerritoriesCount = 0;
-                            }
-                            else
-                            {
-                                USTerritoriesCount = Convert.ToInt32(columns.ElementAtOrDefault(2).Trim());
-                            }
-
-                            if (columns.ElementAtOrDefault(3).Trim().Equals("NA"))
-                            {
-                                ForeignCount = 0;
-                            }
-                            else
-                            {
-                                ForeignCount = Convert.ToInt32(columns.ElementAtOrDefault(3).Trim());
-                            }
-
-                            if (columns.ElementAtOrDefault(4).Trim().Equals("NA"))
-                            {
-                                UnspecifiedCount = 0;
-                            }
-                            else
-                            {
-                                UnspecifiedCount = Convert.ToInt32(columns.ElementAtOrDefault(4).Trim());
-                            }
-
-                            if (columns.ElementAtOrDefault(5).Trim().Equals("NA"))
-                            {
-                                locationAll = 0;
-                            }
-                            else
-                            {
-                                locationAll = Convert.ToInt32(columns.ElementAtOrDefault(5).Trim());
+                                employeeCount = Convert.ToInt32(employees);
                             }
 
                             //add agency code if not exists
-                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName))
+                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0)
                             {
                                 if (!context.Agency.Any(x => x.AgencyName.Equals(agencyName)) && !context.Agency.Any(x => x.AgencyCode.Equals(agencyCode)))
                                 {
@@ -103,7 +60,6 @@ namespace Persistence2
                                         AgencyName = agencyName,
                                         AgencyCode = agencyCode,
                                         YearID = yearID,
-                                        PartnershipCode = null
                                     };
                                     context.Agency.Add(agency);
                                     context.SaveChanges();
@@ -112,9 +68,7 @@ namespace Persistence2
 
                             int agencyID = (from u in context.Agency where u.AgencyName.Equals(agencyName) select u.AgencyID).FirstOrDefault();
 
-                            int employeeCount = 0;
-
-                            if (!context.Employment.Any(x => x.AgencyID == agencyID))
+                            if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
                             {
                                 Employment employment = new Employment()
                                 {
@@ -122,6 +76,7 @@ namespace Persistence2
                                     EmployeeCount = employeeCount,
                                     QuitCount = null,
                                     AttritionRate = null,
+                                    SurveyID = null,
                                     YearID = yearID
                                 };
                                 context.Employment.Add(employment);
@@ -130,7 +85,11 @@ namespace Persistence2
                             else
                             {
                                 var employment = (from u in context.Employment where u.AgencyID == agencyID select u).FirstOrDefault();
-                                employment.EmployeeCount += employeeCount;
+
+                                if (employment != null)
+                                {
+                                    employment.EmployeeCount += employeeCount;
+                                }
                             }
                         }
                     }
