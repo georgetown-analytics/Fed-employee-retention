@@ -15,14 +15,11 @@ namespace Models2
         public int AgencyID { get; set; }
 
         [Required]
-        [StringLength(500)]
         public String AgencyName { get; set; }
 
         [Required]
         [StringLength(4)]
         public String AgencyCode { get; set; }
-
-        public int? PartnershipCode { get; set; }
 
         [ForeignKey("Years")]
         public int YearID { get; set; }

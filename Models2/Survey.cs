@@ -19,7 +19,6 @@ namespace Models2
 
         [Required]
         [Index(IsUnique = true)]
-        [StringLength(500)]
         public String SurveyTitle { get; set; }
 
         [Required]
