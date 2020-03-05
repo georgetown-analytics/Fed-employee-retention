@@ -66,7 +66,7 @@ namespace Persistence2
                                 }
                             }
 
-                            int agencyID = (from u in context.Agency where u.AgencyName.Equals(agencyName) select u.AgencyID).FirstOrDefault();
+                            int agencyID = (from u in context.Agency where u.AgencyName.Equals(agencyName) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
 
                             if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
                             {
@@ -84,7 +84,7 @@ namespace Persistence2
                             }
                             else
                             {
-                                var employment = (from u in context.Employment where u.AgencyID == agencyID select u).FirstOrDefault();
+                                var employment = (from u in context.Employment where u.AgencyID == agencyID && u.YearID == yearID select u).FirstOrDefault();
 
                                 if (employment != null)
                                 {

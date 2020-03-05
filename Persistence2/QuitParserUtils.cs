@@ -48,7 +48,7 @@ namespace Persistence2
                             if (agencyID != 0)
                             {
 
-                                var employment = (from u in context.Employment where u.AgencyID == agencyID select u).FirstOrDefault();
+                                var employment = (from u in context.Employment where u.AgencyID == agencyID && u.YearID == yearID select u).FirstOrDefault();
 
                                 if (employment != null)
                                 {
