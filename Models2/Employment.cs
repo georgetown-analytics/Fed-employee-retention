@@ -27,16 +27,11 @@ namespace Models2
         [ForeignKey("Years")]
         public int YearID { get; set; }
 
-        [ForeignKey("Survey")]
-        public int? SurveyID { get; set; }
-
         [Required]
         public DateTime Added { get; set; }
 
         public virtual Agency Agency { get; set; }
 
         public virtual Years Years { get; set; }
-
-        public virtual Survey Survey { get; set; }
     }
 }

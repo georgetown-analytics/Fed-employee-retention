@@ -33,12 +33,12 @@ namespace Persistence2
                         }
 
                         int yearID = (from u in context.Years where u.Year == yearNumber select u.YearID).FirstOrDefault();
-                        
+
                         int[] indices = new int[74];
 
                         //account for all columns
                         for (int i = 1; i < 74; i++)
-                        {                         
+                        {
                             indices[i] = i;
                         }
 
@@ -75,16 +75,6 @@ namespace Persistence2
                             }
                         }
                     }
-
-                    //update previously parsed data
-                    int surveyID = (from u in context.Survey where u.YearID == yearNumber select u.SurveyID).FirstOrDefault();
-                    var employment =  (from u in context.Employment where u.YearID == yearNumber && u.SurveyID == null select u).ToList();
-                    
-                    foreach(var agency in employment)
-                    {
-                        agency.SurveyID = surveyID;
-                    }
-                    context.SaveChanges();
                 }
             }
             catch (DbEntityValidationException ex)
