@@ -12,14 +12,14 @@ namespace DataScienceProgram
 
 
             String employmentFilePath = ConfigurationManager.AppSettings["employment"];
-            String quitFilePath = ConfigurationManager.AppSettings["employment"];
+            String quitFilePath = ConfigurationManager.AppSettings["quits"];
             int year = Convert.ToInt32(ConfigurationManager.AppSettings["year"]);
 
 
             Console.WriteLine("Beginning employment parsing");
             
             //parse employees
-            new EmploymentParserUtils().PopulateEmploymentNumbers(employmentFilePath, year);
+            //new EmploymentParserUtils().PopulateEmploymentNumbers(employmentFilePath, year);
 
             //parse attrition rates
             new QuitParserUtils().PopulateAttritionNumbers(quitFilePath, year);
