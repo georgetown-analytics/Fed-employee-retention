@@ -53,6 +53,7 @@ namespace Persistence2
                             //add agency code if not exists
                             if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0)
                             {
+                                //prevent duplicates
                                 if (!context.Agency.Any(x => x.AgencyName.Equals(agencyName)) && !context.Agency.Any(x => x.AgencyCode.Equals(agencyCode)))
                                 {
                                     Agency agency = new Agency()
@@ -68,6 +69,7 @@ namespace Persistence2
 
                             int agencyID = (from u in context.Agency where u.AgencyName.Equals(agencyName) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
 
+                            //prevent duplicates
                             if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
                             {
                                 Employment employment = new Employment()

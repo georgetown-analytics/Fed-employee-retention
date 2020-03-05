@@ -52,6 +52,7 @@ namespace Persistence2
 
                             if (agencyID != 0)
                             {
+                                //prevent duplicates
                                 if (!context.Survey.Any(x => x.AgencyID == agencyID && x.YearID == yearID))
                                 {
                                     for (int i = 3; i < 74; i++)
