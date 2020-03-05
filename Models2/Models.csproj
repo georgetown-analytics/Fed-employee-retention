@@ -54,7 +54,6 @@
     <Compile Include="Agency.cs" />
     <Compile Include="Employment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs" />
     <Compile Include="Survey.cs" />
     <Compile Include="Year.cs" />
   </ItemGroup>

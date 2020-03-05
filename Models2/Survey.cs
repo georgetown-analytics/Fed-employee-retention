@@ -18,18 +18,13 @@ namespace Models2
         public int AgencyID { get; set; }
 
         [Required]
-        [Index(IsUnique = true)]
-        [StringLength(500)]
-        public String SurveyTitle { get; set; }
-
-        [Required]
         public double ResponseValue { get; set; }
 
         [ForeignKey("Years")]
         public int YearID { get; set; }
 
-        [ForeignKey("Question")]
-        public int QuestionID { get; set; }
+        [Index]
+        public int QuestionNumber { get; set; }
 
         [Required]
         public DateTime Added { get; set; }
@@ -37,7 +32,5 @@ namespace Models2
         public virtual Agency Agency { get; set; }
 
         public virtual Years Years { get; set; }
-
-        public virtual Question Question { get; set; }
     }
 }
