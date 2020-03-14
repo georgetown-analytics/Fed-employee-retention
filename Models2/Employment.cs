@@ -24,6 +24,17 @@ namespace Models2
 
         public int? AttritionRate { get; set; }
 
+        public int? AverageSalary { get; set; }
+
+        //years employed
+        public int? AverageService { get; set; }
+
+        //percent advanced degree
+        public int? Education { get; set; }
+
+        //percent female
+        public int? Sex { get; set; }
+
         [ForeignKey("Years")]
         public int YearID { get; set; }
 
