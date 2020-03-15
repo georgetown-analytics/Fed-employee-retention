@@ -51,7 +51,7 @@ namespace Persistence2
                             }
 
                             //add agency code if not exists
-                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyCode.Contains("All"))
+                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyName.Contains("All"))
                             {
                                 //prevent duplicates
                                 if (!context.Agency.Any(x => x.AgencyName.Equals(agencyName)) && !context.Agency.Any(x => x.AgencyCode.Equals(agencyCode)))
@@ -69,31 +69,34 @@ namespace Persistence2
 
                             int agencyID = (from u in context.Agency where u.AgencyName.Equals(agencyName) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
 
-                            //prevent duplicates
-                            if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
+                            if (agencyID != 0)
                             {
-                                Employment employment = new Employment()
+                                //prevent duplicates
+                                if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
                                 {
-                                    AgencyID = agencyID,
-                                    EmployeeCount = employeeCount,
-                                    QuitCount = null,
-                                    AttritionRate = null,
-                                    AverageSalary = null,
-                                    Education = null,
-                                    AverageService = null,
-                                    Sex = null,
-                                    YearID = yearID
-                                };
-                                context.Employment.Add(employment);
-                                context.SaveChanges();
-                            }
-                            else
-                            {
-                                var employment = (from u in context.Employment where u.AgencyID == agencyID && u.YearID == yearID select u).FirstOrDefault();
+                                    Employment employment = new Employment()
+                                    {
+                                        AgencyID = agencyID,
+                                        EmployeeCount = employeeCount,
+                                        QuitCount = null,
+                                        AttritionRate = null,
+                                        AverageSalary = null,
+                                        Education = null,
+                                        AverageService = null,
+                                        Sex = null,
+                                        YearID = yearID
+                                    };
+                                    context.Employment.Add(employment);
+                                    context.SaveChanges();
+                                }
+                                else
+                                {
+                                    var employment = (from u in context.Employment where u.AgencyID == agencyID && u.YearID == yearID select u).FirstOrDefault();
 
-                                if (employment != null)
-                                {
-                                    employment.EmployeeCount += employeeCount;
+                                    if (employment != null)
+                                    {
+                                        employment.EmployeeCount += employeeCount;
+                                    }
                                 }
                             }
                         }

@@ -40,12 +40,8 @@ namespace Persistence2
 
                                 if (employment != null)
                                 {
-                                    if (femaleCount.Equals("NA"))
-                                    {
-                                        percentFemale = 0;
-                                    }
-                                    else
-                                    {
+                                    if (!femaleCount.Equals("NA"))
+                                    {                                 
                                         percentFemale = Convert.ToDouble(femaleCount);
                                     }
 
