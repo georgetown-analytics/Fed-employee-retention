@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="DataScienceContext.cs" />
     <Compile Include="DBErrorLogging.cs" />
+    <Compile Include="DemoParserUtils.cs" />
     <Compile Include="EmploymentParserUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuitParserUtils.cs" />

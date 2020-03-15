@@ -14,6 +14,10 @@ namespace DataScienceProgram
             String employmentFilePath = ConfigurationManager.AppSettings["employment"];
             String quitFilePath = ConfigurationManager.AppSettings["quits"];
             String surveyFilePath = ConfigurationManager.AppSettings["survey"];
+            String sexFilePath = ConfigurationManager.AppSettings["sex"];
+            String educationFilePath = ConfigurationManager.AppSettings["education"];
+            String serviceFilePath = ConfigurationManager.AppSettings["service"];
+            String salaryFilePath = ConfigurationManager.AppSettings["salary"];
             int year = Convert.ToInt32(ConfigurationManager.AppSettings["year"]);
 
 
@@ -26,6 +30,10 @@ namespace DataScienceProgram
 
             //parse attrition rates
             new QuitParserUtils().PopulateAttritionNumbers(quitFilePath, year);
+
+            Console.WriteLine("Beginning demographics parsing");
+
+            new DemoParserUtils().PopulateSexRates(sexFilePath, year);
 
             Console.WriteLine("Beginning survey parsing");
 
