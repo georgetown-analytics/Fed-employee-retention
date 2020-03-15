@@ -51,7 +51,7 @@ namespace Persistence2
                             }
 
                             //add agency code if not exists
-                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyName.Contains("All"))
+                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyCode.Equals("Agen"))
                             {
                                 //prevent duplicates
                                 if (!context.Agency.Any(x => x.AgencyName.Equals(agencyName)) && !context.Agency.Any(x => x.AgencyCode.Equals(agencyCode)))
