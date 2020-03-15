@@ -24,12 +24,12 @@ namespace DataScienceProgram
             Console.WriteLine("Beginning employment parsing");
 
             //parse employees
-            //new EmploymentParserUtils().PopulateEmploymentNumbers(employmentFilePath, year);
+            new EmploymentParserUtils().PopulateEmploymentNumbers(employmentFilePath, year);
 
             Console.WriteLine("Beginning attrition parsing");
 
             //parse attrition rates
-            //new QuitParserUtils().PopulateAttritionNumbers(quitFilePath, year);
+            new QuitParserUtils().PopulateAttritionNumbers(quitFilePath, year);
 
             Console.WriteLine("Beginning demographics parsing");
 
