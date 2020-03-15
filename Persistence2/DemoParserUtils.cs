@@ -29,12 +29,8 @@ namespace Persistence2
                             IEnumerable<String> columns = parser.ReadFields().Select((field, index) => new { field, index }).Where(fi => indices.Contains(fi.index)).Select(fi => fi.field);
 
                             String agencyCode = columns.ElementAtOrDefault(0).Trim().Substring(0, 4);
-                            String percentFemale = columns.ElementAtOrDefault(1).Replace("%","").Trim();
-
-                            if(percentFemale.Equals("NA"))
-                            {
-                                percentFemale = null;
-                            }
+                            String femaleCount = columns.ElementAtOrDefault(1).Replace("%","").Trim();
+                            double percentFemale = 0;                           
 
                             int agencyID = (from u in context.Agency where u.AgencyCode.Equals(agencyCode) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
 
@@ -44,6 +40,15 @@ namespace Persistence2
 
                                 if (employment != null)
                                 {
+                                    if (femaleCount.Equals("NA"))
+                                    {
+                                        percentFemale = 0;
+                                    }
+                                    else
+                                    {
+                                        percentFemale = Convert.ToDouble(femaleCount);
+                                    }
+
                                     employment.Sex = Convert.ToInt32(percentFemale);
                                 }
                             }
