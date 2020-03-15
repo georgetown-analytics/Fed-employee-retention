@@ -56,6 +56,11 @@
     <Compile Include="DBErrorLogging.cs" />
     <Compile Include="DemoParserUtils.cs" />
     <Compile Include="EmploymentParserUtils.cs" />
+    <Compile Include="Migrations\202003050356119_InitialCreate.cs" />
+    <Compile Include="Migrations\202003050356119_InitialCreate.designer.cs">
+      <DependentUpon>202003050356119_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuitParserUtils.cs" />
     <Compile Include="SurveyParserUtils.cs" />
@@ -69,6 +74,11 @@
       <Project>{4c689be7-707b-4a16-ada5-dd8afd1efa6d}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202003050356119_InitialCreate.resx">
+      <DependentUpon>202003050356119_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
