@@ -34,6 +34,9 @@ namespace DataScienceProgram
             Console.WriteLine("Beginning demographics parsing");
 
             new DemoParserUtils().PopulateSexRates(sexFilePath, year);
+            new DemoParserUtils().PopulateAverageService(serviceFilePath, year);
+            new DemoParserUtils().PopulateAverageSalary(salaryFilePath, year);
+            new DemoParserUtils().PopulateAverageEducation(educationFilePath, year);
 
             Console.WriteLine("Beginning survey parsing");
 
