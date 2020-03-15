@@ -78,6 +78,10 @@ namespace Persistence2
                                     EmployeeCount = employeeCount,
                                     QuitCount = null,
                                     AttritionRate = null,
+                                    AverageSalary = null,
+                                    Education = null,
+                                    AverageService = null,
+                                    Sex = null,
                                     YearID = yearID
                                 };
                                 context.Employment.Add(employment);
