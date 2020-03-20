@@ -198,7 +198,13 @@ namespace Persistence2
                             IEnumerable<String> columns = parser.ReadFields().Select((field, index) => new { field, index }).Where(fi => indices.Contains(fi.index)).Select(fi => fi.field);
 
                             String agencyCode = columns.ElementAtOrDefault(0).Trim().Substring(0, 4);
-                            String educationCount = columns.ElementAtOrDefault(1).Replace("%", "").Trim();
+                            String educationCount = "NA";
+
+                            if (!agencyCode.Equals("Agen"))
+                            {
+                                educationCount = columns.ElementAtOrDefault(0).Replace("%", "").Trim().Substring(columns.ElementAtOrDefault(0).IndexOf('\t') + 1);                               
+                            }
+
                             double percentEducation = 0;
 
                             int agencyID = (from u in context.Agency where u.AgencyCode.Equals(agencyCode) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
