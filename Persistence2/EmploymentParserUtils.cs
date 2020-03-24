@@ -54,7 +54,9 @@ namespace Persistence2
                             if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyCode.Equals("Agen"))
                             {
                                 //prevent duplicates
-                                if (!context.Agency.Any(x => x.AgencyName.Equals(agencyName)) && !context.Agency.Any(x => x.AgencyCode.Equals(agencyCode)))
+                                var agencyCheck = (from u in context.Agency where u.AgencyName.Equals(agencyName) && u.AgencyCode.Equals(agencyCode) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
+                                
+                                if (agencyCheck == 0)
                                 {
                                     Agency agency = new Agency()
                                     {
@@ -72,7 +74,9 @@ namespace Persistence2
                             if (agencyID != 0)
                             {
                                 //prevent duplicates
-                                if (!context.Employment.Any(x => x.AgencyID == agencyID) && employeeCount != 0)
+                                var employmentCheck = (from u in context.Employment where u.AgencyID == agencyID && u.YearID == yearID && employeeCount != 0 select u.EmploymentID).FirstOrDefault();
+
+                                if (employmentCheck == 0)
                                 {
                                     Employment employment = new Employment()
                                     {
