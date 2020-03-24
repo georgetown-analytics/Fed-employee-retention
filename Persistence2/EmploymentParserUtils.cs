@@ -51,7 +51,7 @@ namespace Persistence2
                             }
 
                             //add agency code if not exists
-                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyCode.Equals("Agen"))
+                            if (!String.IsNullOrWhiteSpace(agencyCode) && !String.IsNullOrWhiteSpace(agencyName) && employeeCount != 0 && !agencyCode.Equals("Agen") && !agencyName.Equals("UNSPECIFIED"))
                             {
                                 //prevent duplicates
                                 var agencyCheck = (from u in context.Agency where u.AgencyName.Equals(agencyName) && u.AgencyCode.Equals(agencyCode) && u.YearID == yearID select u.AgencyID).FirstOrDefault();
