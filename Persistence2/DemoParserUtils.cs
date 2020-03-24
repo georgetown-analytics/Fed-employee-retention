@@ -200,9 +200,17 @@ namespace Persistence2
                             String agencyCode = columns.ElementAtOrDefault(0).Trim().Substring(0, 4);
                             String educationCount = "NA";
 
+                            //setup since not all spreadsheets are the same (unknown reason)
                             if (!agencyCode.Equals("Agen"))
                             {
-                                educationCount = columns.ElementAtOrDefault(0).Replace("%", "").Trim().Substring(columns.ElementAtOrDefault(0).IndexOf('\t') + 1);                               
+                                if (year == 2017)
+                                {
+                                    educationCount = columns.ElementAtOrDefault(0).Replace("%", "").Trim().Substring(columns.ElementAtOrDefault(0).IndexOf('\t') + 1);
+                                }
+                                else
+                                {
+                                    educationCount = columns.ElementAtOrDefault(1).Replace("%", "").Trim();
+                                }
                             }
 
                             double percentEducation = 0;
@@ -226,10 +234,10 @@ namespace Persistence2
 
                                     employment.Education = Convert.ToInt32(percentEducation);
                                 }
+                                context.SaveChanges();
                             }
                         }
                     }
-                    context.SaveChanges();
                 }
             }
             catch (DbEntityValidationException ex)
