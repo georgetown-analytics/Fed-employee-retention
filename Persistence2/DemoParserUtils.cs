@@ -234,9 +234,9 @@ namespace Persistence2
 
                                     employment.Education = Convert.ToInt32(percentEducation);
                                 }
-                                context.SaveChanges();
                             }
                         }
+                        context.SaveChanges();
                     }
                 }
             }
