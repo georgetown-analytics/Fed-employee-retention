@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models2\Models.cs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python Scripts", "Python Scripts", "{0D899234-B3C2-464F-85B8-7F78F5D78F8D}"
 	ProjectSection(SolutionItems) = preProject
-		CodeToGenerateHMTLDataReport.ipynb = CodeToGenerateHMTLDataReport.ipynb
-		FedRetention4_13_20.ipynb = FedRetention4_13_20.ipynb
-		FEVS_Full3.ipynb = FEVS_Full3.ipynb
+		Python Files\CodeToGenerateHMTLDataReport.ipynb = Python Files\CodeToGenerateHMTLDataReport.ipynb
+		Python Files\FedRetention4_13_20.ipynb = Python Files\FedRetention4_13_20.ipynb
+		Python Files\FEVS_Full3.ipynb = Python Files\FEVS_Full3.ipynb
 	EndProjectSection
 EndProject
 Global
