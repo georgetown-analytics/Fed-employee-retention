@@ -12,8 +12,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python Scripts", "Python Scripts", "{0D899234-B3C2-464F-85B8-7F78F5D78F8D}"
 	ProjectSection(SolutionItems) = preProject
 		Python Files\CodeToGenerateHMTLDataReport.ipynb = Python Files\CodeToGenerateHMTLDataReport.ipynb
+		Python Files\FedRetenDeepLearning.ipynb = Python Files\FedRetenDeepLearning.ipynb
 		Python Files\FedRetention4_13_20.ipynb = Python Files\FedRetention4_13_20.ipynb
+		Python Files\FedRetention4_30_20.ipynb = Python Files\FedRetention4_30_20.ipynb
+		Python Files\FEVS4_30_20.ipynb = Python Files\FEVS4_30_20.ipynb
 		Python Files\FEVS_Full3.ipynb = Python Files\FEVS_Full3.ipynb
+		Python Files\FEVSDeepLearning.ipynb = Python Files\FEVSDeepLearning.ipynb
 	EndProjectSection
 EndProject
 Global
