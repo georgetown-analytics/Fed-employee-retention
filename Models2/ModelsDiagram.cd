@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Models2.Survey">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAEAQAAAAAkAAAEAAAAAAIAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Survey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models2.Years">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Year.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models2.Employment">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACAAUAAAQBAAEAAAAAEAAAAQAIAIAAAAgCAAAAAA=</HashCode>
+      <FileName>Employment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Models2.Agency">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAABAASAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Agency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
