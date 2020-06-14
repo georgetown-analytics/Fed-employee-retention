@@ -32,3 +32,4 @@ C:\Users\kline\Documents\Fed-employee-retention\obj\Debug\DataScienceProgram.csp
 C:\Users\kline\Documents\Fed-employee-retention\obj\Debug\DataScienceProgram.csproj.CopyComplete
 C:\Users\kline\Documents\Fed-employee-retention\obj\Debug\DataScienceProgram.exe
 C:\Users\kline\Documents\Fed-employee-retention\obj\Debug\DataScienceProgram.pdb
+C:\Users\kline\Documents\Fed-employee-retention\obj\Debug\DataScienceProgram.csproj.CoreCompileInputs.cache

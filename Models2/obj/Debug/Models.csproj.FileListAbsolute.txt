@@ -19,3 +19,4 @@ C:\Users\kline\Documents\Fed-employee-retention\Models2\bin\Debug\EntityFramewor
 C:\Users\kline\Documents\Fed-employee-retention\Models2\obj\Debug\Models.csproj.CopyComplete
 C:\Users\kline\Documents\Fed-employee-retention\Models2\obj\Debug\Models2.dll
 C:\Users\kline\Documents\Fed-employee-retention\Models2\obj\Debug\Models2.pdb
+C:\Users\kline\Documents\Fed-employee-retention\Models2\obj\Debug\Models.csproj.CoreCompileInputs.cache

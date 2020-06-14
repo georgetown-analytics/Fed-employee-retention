@@ -26,3 +26,4 @@ C:\Users\kline\Documents\Fed-employee-retention\Persistence2\obj\Debug\Persisten
 C:\Users\kline\Documents\Fed-employee-retention\Persistence2\obj\Debug\Persistence.csproj.CopyComplete
 C:\Users\kline\Documents\Fed-employee-retention\Persistence2\obj\Debug\Persistence2.dll
 C:\Users\kline\Documents\Fed-employee-retention\Persistence2\obj\Debug\Persistence2.pdb
+C:\Users\kline\Documents\Fed-employee-retention\Persistence2\obj\Debug\Persistence.csproj.CoreCompileInputs.cache

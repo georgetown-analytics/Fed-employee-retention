@@ -63,6 +63,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Persistence.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models2\Models.csproj">
