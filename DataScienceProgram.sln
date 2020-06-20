@@ -14,9 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python Scripts", "Python Sc
 		Python Files\CodeToGenerateHMTLDataReport.ipynb = Python Files\CodeToGenerateHMTLDataReport.ipynb
 		Python Files\FedRetenDeepLearning.ipynb = Python Files\FedRetenDeepLearning.ipynb
 		Python Files\FedRetentionFinalNotebook.ipynb = Python Files\FedRetentionFinalNotebook.ipynb
-		Python Files\FEVS4_30_20.ipynb = Python Files\FEVS4_30_20.ipynb
-		Python Files\FEVS_Full3.ipynb = Python Files\FEVS_Full3.ipynb
-		Python Files\FEVSDeepLearning.ipynb = Python Files\FEVSDeepLearning.ipynb
 	EndProjectSection
 EndProject
 Global
